@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    height: 15vh;
+    background-color: #ffffff;
+    /* border: solid red 3px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+}
+
+.menuTitle {
+    /* border: solid 2px blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 87vw;
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.menu ul {
+    /* border: solid 2px red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30vw;
+    height: 5vh;
+}
+
+.menu li {
+    font-size: 1.25em;
+    font-weight: 300;
+    color: #707070;
+}
+
+.menu li:hover {
+    font-size: 1.5625em;
+    font-weight: 900;
+    color: #000000;
+    cursor: pointer;
+}
+
+.blueOrange {
+    background-image: url(./assets/laranja\ azul\ recorte.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* border: red solid 4px; */
+    height: 653px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+.pUm {
+    /* border: solid red; */
+    font-size: 4.3em;
+    font-weight: 900;
+    margin-left: 6.7vw;
+    width: 68vw;
+}
+
+.pDois {
+    font-size: 2em;
+    margin-top: 8vh;
+    font-weight: 100;   
+    margin-left: 6.7vw;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 1300px;
+    /* border: solid 4px ; */
+    justify-content: center;
+}
+
+.images {
+    width: 90vw;
+    height: 42.5vh;
+    /* border: solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.contents {
+    height: 41vh;
+}
+
+footer {
+    background-color: rgba(240, 240, 240, 0.88);
+    height: 18vh;
+    /* border: solid red; */
+    display: flex;
+
+}
+
+.socialMidia {
+    /* border: solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30vw;
+    margin-left: 3.7vw;
+}
+
+.icons {
+    height: 5vh;
+}
+
+.copyright {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-left: 10vw;
+}
+
+.reference {
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 0.9em;
+    width: 35vw;
+    margin-left: 2.3vw;
+    /* border: solid red; */
+}
