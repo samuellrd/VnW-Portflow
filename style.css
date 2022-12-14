@@ -6,12 +6,13 @@
     box-sizing: border-box;
     list-style: none;
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    text-decoration-color: none;
 }
 
 header {
-    height: 15vh;  /* o valor tava 15vh */
+    height: 15vh; 
     background-color: #ffffff;
-    /* border: solid red 3px; */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -20,8 +21,63 @@ header {
     z-index: 1;
 }
 
+.menuHamburguer{
+    height: 100%;
+    display: none;
+}
+
+#checkboxMenu {
+    position: absolute;
+    opacity: 1;
+}
+
+.burguer {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 35vw;
+    background-color: black ;
+}
+
+.burguer span {
+    margin-top: 1vh;
+    position: absolute;
+    height: 0.2vh;
+    width: 6vw;
+    background: #ffffff;
+    transition: 0.25s ease-in-out;
+}
+
+.burguer span:nth-child(1) {
+    top: 0;
+}
+
+.burguer span:nth-child(2) {
+    top: 0.9vh;
+}
+
+.burguer span:nth-child(3) {
+    top: 1.8vh;
+}
+
+#checkboxMenu:checked + .burguer span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 1.1478vh;
+}
+
+#checkboxMenu:checked + .burguer span:nth-child(2) {
+    opacity: 0;
+}
+
+#checkboxMenu:checked + .burguer span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 1.1478vh;
+}
+
 .menuTitle {
-    /* border: solid 2px blue; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,20 +90,28 @@ header {
 }
 
 .menu ul {
-    /* border: solid 2px red; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 30vw;
+    width: 35vw;
     height: 5vh;
 }
 
+#bold {
+    font-weight: 900;
+    color: #000000;
+    font-size: 1.2em;
+}
+
 .menu li {
-    /* border: solid red; */
+    width: 6vw;
     font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 300;
     color: #707070;
-    transition: 0.6s;
+    transition: 0.4s;
 }
 
 .menu li:hover {
@@ -61,16 +125,14 @@ header {
     background-image: url(./assets/laranja\ azul\ recorte.png);
     background-repeat: no-repeat;
     background-size: 100%;
-    /* border: red solid 4px; */
-    height: 528px; /* tava 553 px */
+    height: 528px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     color: #ffffff;
 }
 
-.pUm {
-    /* border: solid red; */
+.quote {
     font-size: 3.3em;
     font-weight: 900;
     margin-top: 5vh;
@@ -78,18 +140,20 @@ header {
     width: 68vw;
 }
 
-.pDois {
+.contat {
     font-size: 1.5em;
     margin-top: 8vh;
     font-weight: 100;   
-    /* border: solid red; */
     margin-left: 6vw;
+    width: 16vw;
+    color: #ffffff;
+    transition: 2s;
 }
 
-.pDois :hover {
-    transition: 2s;
-    transform: scale(2);
+.contat:hover {
+    transform: scale(1.2);
     text-decoration: underline;
+    cursor: pointer;
 }
 
 main {
@@ -97,14 +161,12 @@ main {
     align-items: center;
     flex-direction: column;
     height: 140vh;
-    /* border: solid 4px ; */
     justify-content: center;
 }
 
 .images {
     width: 87vw;
     height: 41vh;
-    /* border: solid red; */
     display: flex;
     justify-content: space-between;
     align-items: center
@@ -116,20 +178,17 @@ main {
 }
 
 .contents:hover {
-    transform: scale(1.066);
-    /* transition: 1s; */
+    transform: scale(1.07);
 }
 
 footer {
     background-color: rgba(240, 240, 240, 0.88);
     height: 18vh;
-    /* border: solid red; */
     display: flex;
-    /* margin-top: 20px; */
+
 }
 
 .socialMidia {
-    /* border: solid red; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -152,5 +211,158 @@ footer {
     font-size: 0.9em;
     width: 46vw;
     margin-left: 2.3vw;
-    /* border: solid red; */
 }
+
+#topo {
+    display: none;
+}
+
+@media (max-width:500px) {
+    header{
+        display: flex;
+        justify-content: center;
+        height: 4vh;
+        position: static;
+    }
+
+    .menuHamburguer {
+        display: block;
+    }
+
+    .title {
+        position: relative;
+        margin-left: 10vw;
+        font-size: 1.4em;
+    }
+
+    .menu {
+        display: none;
+    }
+  
+    /* 
+    (algo para consertar futuramente)
+    
+    .menu {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        z-index: 10;
+        width: 70%;
+        height: 60vh;
+        background: red;
+        top: 4vh;
+        left: -100%;
+        transition: all 2s;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        line-height: 7vh;
+    }
+
+    .menu li {
+        color: #000000;
+        width: 35vw;
+        text-align: center;
+        margin: 2vh 0;
+        line-height: -19vh;
+    }
+
+    .check:checked ~ .menu {
+        left: 0;
+    } */
+
+    .blueOrange {
+        height: 96vh;
+        width: 100%;
+        background-size: cover;
+        background-position: 84%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .quote {
+        position: relative;
+        margin-left: 10vw;
+        margin-bottom: 12vh; 
+        line-height: 9vh;
+    }
+
+    .contat {
+        position: absolute;
+        width: 65vw;
+        margin-left: 10vw;
+        margin-bottom: 6vh;
+    }
+
+    main {
+        height: 550vh;
+    }
+
+    .images {
+        margin-top: vh;
+       height: 180vh;
+       flex-wrap: wrap;
+       align-items: center;
+       justify-content: center;
+    }
+
+    footer {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 83vw;
+        height: 20vh;
+        margin-left: 9vw;
+    }
+
+    .socialMidia {
+        width: 100%;
+        height: 8vh;
+        background-color: #7FDBD4;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+
+    .midiaIcons {
+        width: 75%;
+    }
+
+    .copyright {
+        font-size: 0.99em;
+        display: flex;
+        justify-content: flex-start;
+        margin: 0;
+        margin-top: 2.5vh;
+    }
+
+    .reference {
+        align-items: stretch;
+        font-size: 0.6em;
+        width: 46vw;
+        margin: 0;
+    }
+
+    #topo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #333333;
+        color: #CCCCCC;
+        border: solid 1px #707070;
+        height: 3vh;
+        width: 17.5vw;
+        font-size: 0.75em;
+        position: absolute;
+        margin-top: 12.5vh;
+        margin-left: 65vw;
+    }
+}
+
+
